@@ -30,6 +30,3 @@ sbt mkrun
 
 sh prepareBusybox.sh
 sh analyzeBusybox.sh
-mkdir system
-wget http://www.cs.cmu.edu/~ckaestne/tmp/includes-redhat.tar.bz2
-tar xvjf includes-redhat.tar.bz2

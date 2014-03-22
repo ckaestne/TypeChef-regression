@@ -18,6 +18,8 @@ find . -type d | grep -v "^\./\."^C | while read i; do
 done
 
 
+tail -n 2 $pwd/busybox/coreutils/du.dbg | sed '$d' > $pwd/report/timing.format
+> $pwd/report/timing.csv
 
 cat $files | while read i; do
 	rm $pwd/report/$i.*
@@ -28,4 +30,6 @@ cat $files | while read i; do
 	cp $pwd/busybox/$i.pi $pwd/report/$i.pi
 	cp $pwd/busybox/$i.pi.dbgSrc $pwd/report/$i.pi.dbgSrc
 	cp $pwd/busybox/$i.pi.macroDbg $pwd/report/$i.pi.macroDbg
+
+	tail -n 1 $pwd/busybox/$i.dbg >> $pwd/report/timing.csv
 done
